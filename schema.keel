@@ -3,6 +3,7 @@ model Todo {
         complete Boolean @default(false)
         title Text
         description Text?
+        responsible Text
     }
 
     operations {
