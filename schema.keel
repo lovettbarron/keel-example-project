@@ -1,0 +1,24 @@
+model Todo {
+    fields {
+        complete Boolean @default(false)
+        title Text
+        description Text?
+    }
+
+    operations {
+        create createTodo() with (title, description?)
+        get todo(id)
+        list allTodos(complete?)
+        update setCompletion(id) with (complete)
+        update updateTodo(id) with (title?, description?, complete?)
+        delete deleteTodo(id)
+    }
+}
+
+api Web {
+    @graphql
+
+    models {
+        Todo
+    }
+}
