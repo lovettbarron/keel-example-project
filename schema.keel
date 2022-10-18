@@ -25,6 +25,7 @@ api Web {
 
 api Console {
     @rpc
+    
     models {
         Todo
     }
